@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn PHP - Forms in PHP</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>LEARN PHP</h1>
+        <h2>Forms in PHP</h2>
+    </header>
+    
+    <div class="container">
+        <nav class="sidebar">
+           
+            <ul>
+                <h2>PHP</h2>
+                <li><a href="index.html">Introduction to PHP</a></li>
+                 <li><a href="webapplication.html">Web Applications</a></li>
+                <li><a href="phpbasics.html">PHP Basics</a></li>
+                <li><a href="functions.html">Functions</a></li>
+                <li><a href="controlstructure.html">Control Structures</a></li>
+                <li><a href="from.html">Forms</a></li>
+                <li><a href="array.html">Arrays</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <section>
+                <h3>Form Control</h3>
+                <p>Forms are essential for collecting user input in web applications. PHP can process form data through various methods like GET and POST.</p>
+                <pre><code>
+<form action="process.php" method="post">
+    Name: &lt;input type="text" name="name"&gt;&lt;br&gt;
+    Email: &lt;input type="email" name="email"&gt;&lt;br&gt;
+    &lt;input type="submit" value="Submit"&gt;
+</form>
+                </code></pre>
+            </section>
+            <section>
+                <h3>Super Global Variables and Arrays</h3>
+                <p>PHP provides superglobal arrays such as <code>$_POST</code> and <code>$_GET</code> to access form data. These arrays allow you to retrieve user input easily.</p>
+                <pre><code>
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    \$name = \$_POST['name'];
+    \$email = \$_POST['email'];
+    echo "Name: " . \$name . "&lt;br&gt;";
+    echo "Email: " . \$email;
+}
+                </code></pre>
+            </section>
+            <section>
+                <h3>Importing and Accessing User Input</h3>
+                <p>To access user input, you can import it using superglobals. Here’s how to process a form submission and display the results:</p>
+                <pre><code>
+<!-- process.php -->
+if (\$_SERVER["REQUEST_METHOD"] == "POST") {
+    \$name = \$_POST['name'];
+    \$email = \$_POST['email'];
+    echo "Name: " . \$name . "&lt;br&gt;";
+    echo "Email: " . \$email;
+}
+                </code></pre>
+                <p>Output when the form is submitted:</p>
+                <pre><code>
+Name: John Doe
+Email: john@example.com
+<a href="hello.html">a</a>
+                </code></pre>
+            </section>
+            <section>
+                <h3>Conclusion</h3>
+                <p>Forms are a fundamental aspect of web development in PHP. Understanding how to control forms and access user input is crucial for creating interactive applications.</p>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <p> 2024 Learn PHP. Mohit jain</p>
+    </footer>
+</body>
+</html>

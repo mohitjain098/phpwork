@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display PHP Code</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 10px;
+            background-color: #f8f8f8;
+        }
+        code {
+            font-family: monospace;
+            background-color: #f4f4f4;
+            padding: 1px 3px;
+            font-size: 8px; /* Much smaller font size */
+            display: block;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            border: 1px solid #ccc;
+            margin: 0;
+            line-height: 1.2; /* Tighter line spacing */
+            width: 100%; /* Ensure it fills the width */
+        }
+        h1 {
+            font-size: 16px; /* Small header size */
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>PHP and HTML Code Example</h1>
+    
+   
+        &lt;?php<br>
+        $nameError = &quot;&quot;;<br>
+        $passwordError = &quot;&quot;;<br>
+        $errorMessage = &quot;&quot;;<br><br>
+
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {<br>
+            $username = trim($_POST['username'] ?? '');<br>
+            $password = trim($_POST['password'] ?? '');<br><br>
+
+            if (empty($username) && empty($password)) {<br>
+                $errorMessage = &quot;Both username and password are required!&quot;;<br>
+            } elseif (empty($username)) {<br>
+                $nameError = &quot;Username is required!&quot;;<br>
+            } elseif (empty($password)) {<br>
+                $passwordError = &quot;Password is required!&quot;;<br>
+            } else {<br>
+                echo &quot;&lt;p&gt;Form submitted successfully!&lt;/p&gt;&quot;;<br>
+            }<br>
+        }<br>
+        ?&gt;<br><br>
+
+        &lt;!DOCTYPE html&gt;<br>
+        &lt;html lang=&quot;en&quot;&gt;<br>
+        &lt;head&gt;<br>
+            &lt;meta charset=&quot;UTF-8&quot;&gt;<br>
+            &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;<br>
+            &lt;title&gt;Login Form&lt;/title&gt;<br>
+            &lt;style&gt;<br>
+                .error {<br>
+                    color: red;<br>
+                }<br>
+            &lt;/style&gt;<br>
+        &lt;/head&gt;<br>
+        &lt;body&gt;<br>
+            &lt;form method=&quot;post&quot;&gt;<br>
+                &lt;h3&gt;Login Form&lt;/h3&gt;<br><br>
+
+                &lt;?php if (!empty($errorMessage)) : ?&gt;<br>
+                    &lt;p class=&quot;error&quot;&gt;&lt;?php echo $errorMessage; ?&gt;&lt;/p&gt;<br>
+                &lt;?php endif; ?&gt;<br><br>
+
+                &lt;p&gt;<br>
+                    &lt;label for=&quot;username&quot;&gt;Username&lt;/label&gt;<br>
+                    &lt;input type=&quot;text&quot; id=&quot;username&quot; name=&quot;username&quot; placeholder=&quot;Enter username&quot; value=&lt;?php echo htmlspecialchars($_POST['username'] ?? ''); ?&gt; /&gt;<br>
+                    &lt;?php if (!empty($nameError)) : ?&gt;<br>
+                        &lt;span class=&quot;error&quot;&gt;&lt;?php echo $nameError; ?&gt;&lt;/span&gt;<br>
+                    &lt;?php endif; ?&gt;<br>
+                &lt;/p&gt;<br><br>
+
+                &lt;p&gt;<br>
+                    &lt;label for=&quot;password&quot;&gt;Password&lt;/label&gt;<br>
+                    &lt;input type=&quot;password&quot; id=&quot;password&quot; name=&quot;password&quot; placeholder=&quot;Enter password&quot; /&gt;<br>
+                    &lt;?php if (!empty($passwordError)) : ?&gt;<br>
+                        &lt;span class=&quot;error&quot;&gt;&lt;?php echo $passwordError; ?&gt;&lt;/span&gt;<br>
+                    &lt;?php endif; ?&gt;<br>
+                &lt;/p&gt;<br><br>
+
+                &lt;button name=&quot;submit&quot;&gt;Login&lt;/button&gt;<br>
+            &lt;/form&gt;<br>
+        &lt;/body&gt;<br>
+        &lt;/html&gt;
+   
+</body>
+</html>

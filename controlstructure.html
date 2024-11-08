@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn PHP - Control Structures</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>LEARN PHP</h1>
+        <h2>Control Structures of PHP</h2>
+    </header>
+    
+    <div class="container">
+        <nav class="sidebar">
+         
+            <ul>
+                <h2>PHP</h2>
+                <li><a href="index.html">Introduction to PHP</a></li>
+                 <li><a href="webapplication.html">Web Applications</a></li>
+                <li><a href="phpbasics.html">PHP Basics</a></li>
+                <li><a href="functions.html">Functions</a></li>
+                <li><a href="controlstructure.html">Control Structures</a></li>
+                <li><a href="from.html">Forms</a></li>
+                <li><a href="array.html">Arrays</a></li>
+                
+            </ul>
+        </nav>
+
+        <main>
+            <section>
+                <h3>Conditional Statements</h3>
+                <p>Conditional statements allow you to execute different code blocks based on certain conditions. In PHP, common conditional statements include <code>if</code>, <code>else</code>, and <code>switch</code>.</p>
+                <pre><code>
+if (\$age &gt;= 18) {
+    echo "You are an adult.";
+} else {
+    echo "You are a minor.";
+}
+                </code></pre>
+            </section>
+            <section>
+                <h3>Looping Statements</h3>
+                <p>Looping statements enable you to execute a block of code multiple times. PHP provides several types of loops, such as <code>for</code>, <code>while</code>, and <code>foreach</code>.</p>
+                <pre><code>
+for (\$i = 0; \$i &lt; 5; \$i++) {
+    echo "Number: " . \$i . "&lt;br&gt;";
+}
+                </code></pre>
+            </section>
+            <section>
+                <h3>File Inclusion Statements</h3>
+                <p>File inclusion statements allow you to include external PHP files within your script. This is useful for reusing code and organizing your project. Common statements are <code>include</code>, <code>require</code>, <code>include_once</code>, and <code>require_once</code>.</p>
+                <pre><code>
+include 'header.php'; // Includes the header.php file
+require 'config.php'; // Requires the config.php file
+                </code></pre>
+            </section>
+            <section>
+                <h3>Conclusion</h3>
+                <p>Control structures are fundamental in PHP programming, enabling conditional execution and repetitive tasks. Mastery of these concepts is essential for building robust and dynamic web applications.</p>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <p> 2024 Learn PHP. Mohit jain</p>
+    </footer>
+</body>
+</html>

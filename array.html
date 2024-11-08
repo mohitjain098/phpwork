@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn PHP - Arrays</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>LEARN PHP</h1>
+        <h2>Arrays</h2>
+    </header>
+    
+    <div class="container">
+        <nav class="sidebar">
+         
+            <ul>
+                <h2>PHP</h2>
+                <li><a href="index.html">Introduction to PHP</a></li>
+                 <li><a href="webapplication.html">Web Applications</a></li>
+                <li><a href="phpbasics.html">PHP Basics</a></li>
+                <li><a href="functions.html">Functions</a></li>
+                <li><a href="controlstructure.html">Control Structures</a></li>
+               <li><a href="from.html">Forms</a></li>
+                <li><a href="array.html">Arrays</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <section>
+                <h3>Array</h3>
+                <p>An array in PHP is a data structure that can store multiple values in a single variable. Arrays can hold various data types, including numbers and strings.</p>
+            </section>
+            <section>
+                <h3>Creating and Types of Arrays</h3>
+                <p>PHP supports three types of arrays: indexed arrays, associative arrays, and multidimensional arrays.</p>
+                <pre><code>
+$indexedArray = array(1, 2, 3, 4);
+$associativeArray = array("first" =&gt; "John", "last" =&gt; "Doe");
+$multiArray = array(
+    array("A", "B", "C"),
+    array("D", "E", "F")
+);
+                </code></pre>
+            </section>
+            <section>
+                <h3>Accessing Arrays</h3>
+                <p>You can access array elements using their index or key. Here’s how to access values:</p>
+                <pre><code>
+echo \$indexedArray[0]; // Outputs: 1
+echo \$associativeArray["first"]; // Outputs: John
+                </code></pre>
+            </section>
+            <section>
+                <h3>Inspecting Arrays</h3>
+                <p>To inspect an array, you can use the <code>print_r()</code> function, which displays the structure and contents of the array.</p>
+                <pre><code>
+print_r(\$multiArray);
+                </code></pre>
+                <p>Output:</p>
+                <pre><code>
+Array
+(
+    [0] => Array
+        (
+            [0] => A
+            [1] => B
+            [2] => C
+        )
+
+    [1] => Array
+        (
+            [0] => D
+            [1] => E
+            [2] => F
+        )
+)
+                </code></pre>
+            </section>
+            <section>
+                <h3>Deleting from Arrays</h3>
+                <p>You can remove elements from an array using the <code>unset()</code> function.</p>
+                <pre><code>
+unset(\$indexedArray[1]); // Removes the second element
+print_r(\$indexedArray);
+                </code></pre>
+                <p>Output:</p>
+                <pre><code>
+Array
+(
+    [0] => 1
+    [2] => 3
+    [3] => 4
+)
+                </code></pre>
+            </section>
+            <section>
+                <h3>Conclusion</h3>
+                <p>Arrays are a powerful feature in PHP that allows for the organization and management of data. Understanding how to create, access, and manipulate arrays is crucial for effective programming in PHP.</p>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <p> 2024 Learn PHP. Mohit jain</p>
+    </footer>
+</body>
+</html>
